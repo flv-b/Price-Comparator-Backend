@@ -22,6 +22,7 @@ public class Product {
         this.package_unit = productValues[5];
         this.price = Float.valueOf(productValues[6]);
         this.currency = productValues[7];
+
     }
 
     public String getId() { 
