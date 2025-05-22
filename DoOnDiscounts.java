@@ -10,7 +10,7 @@ public class DoOnDiscounts {
         List<Discount> discounts = new ArrayList<>();
         validFiles
                 .forEach(path -> {
-                    if (path.startsWith(storeName +"_discounts")) {
+                    if (path.startsWith(storeName + "_discounts")) {
                         List<Discount> fileDiscounts = CSVReader.GetDiscountsFromFile(path);
                         discounts.addAll(fileDiscounts);
                     }
@@ -24,7 +24,6 @@ public class DoOnDiscounts {
         List<Discount> bestDiscountAcrossStores = new ArrayList<>();
         Discount bestDiscount = null;
 
-        
         for (String store : storeNames) {
             List<Discount> thiStoreDiscounts = getDiscountsForStoreName(validFiles, store);
             for (Discount discount : thiStoreDiscounts) {
@@ -32,8 +31,17 @@ public class DoOnDiscounts {
                     bestDiscount = discount;
             }
             bestDiscountAcrossStores.add(bestDiscount);
-          bestDiscount = null;
+            bestDiscount = null;
         }
         return bestDiscountAcrossStores;
     }
+
+    public static void printBestDiscount(Path folderPath) {
+        List<Discount> discounts = DoOnDiscounts.getBestDiscountsAcrossStores(folderPath);
+        for (Discount discount : discounts) {
+            System.out.println("Best Discount at " + discount.getStoreName() + " is of "
+                    + discount.getPercentageOfDiscount() + "% for " + discount.getName());
+        }
+    }
+
 }

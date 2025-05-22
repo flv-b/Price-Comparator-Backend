@@ -3,14 +3,10 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-import store.Discount;
-import store.Product;
-
 public class Main {
     public static void main(String[] args) {
 
         Path folderPath = Paths.get("dataSamples");
-        List<String> myStores = ReadFilesFromFolderNIO.readStoresNameFrom(folderPath);
         boolean running = true;
         Scanner scanner = new Scanner(System.in);
 
@@ -23,21 +19,17 @@ public class Main {
             System.out.println("5. Feature Five - Not Available");
             System.out.println("0. Exit");
 
-
             System.out.print("Enter the number of the feature you want to access (1-5): ");
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
                     System.out.println("You selected Daily Shopping Basket Monitoring.");
+                    DoOnShoppingBasket.printBestOffersForUser(folderPath);
                     break;
                 case 2:
                     System.out.println("You selected Best Discounts.");
-                    List<Discount> discounts = DoOnDiscounts.getBestDiscountsAcrossStores(folderPath);
-                    for (Discount discount : discounts) {
-                        System.out.println("Best Discount at " + discount.getStoreName() + " is of "
-                                + discount.getPercentageOfDiscount() + "% for " + discount.getName());
-                    }
+                    DoOnDiscounts.printBestDiscount(folderPath);
                     break;
                 case 3:
                     System.out.println("You selected Feature Three - Not Available.");
