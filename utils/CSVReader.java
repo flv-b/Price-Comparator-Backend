@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import store.Product;
-import store.Discount;
+import model.Discount;
+import model.Product;
 
 public class CSVReader {
     public static String readCurrentStoresName(String[] folderNameStrings) {

@@ -1,4 +1,4 @@
-package store;
+package model;
 
 public class Product {
     // Instance Variables
