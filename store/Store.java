@@ -1,3 +1,4 @@
+package store;
 public class Store {
     // Instance Variables
     String store_name;

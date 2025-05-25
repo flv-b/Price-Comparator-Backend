@@ -1,5 +1,8 @@
+package features;
 
 import store.Product;
+import utils.CSVReader;
+import utils.ReadFilesFromFolderNIO;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -10,9 +13,9 @@ import java.util.Scanner;
 public class DoOnShoppingBasket {
 
     public static List<String> getUserShoppingBasketList() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your shopping list items, separated by commas:");
         System.out.print("For example: lapte, oua, iaurt\n> ");
+        Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         List<String> shoppingList = Arrays.asList(input.split("\\s*,\\s*"));
         return shoppingList;

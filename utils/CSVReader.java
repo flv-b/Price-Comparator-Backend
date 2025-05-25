@@ -1,3 +1,5 @@
+package utils;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class CSVReader {
         }
 
         // Path to our CSV file
-        String csvFile = "dataSamples\\" + fileName;
+        String csvFile = "data\\" + fileName;
 
         // Get store name from File
         String storeName = readCurrentStoresName(fileName.split("_"));
@@ -53,7 +55,7 @@ public class CSVReader {
     public static List<Discount> GetDiscountsFromFile(String fileName) {
 
         // Path to our CSV file
-        String csvFile = "dataSamples\\" + fileName;
+        String csvFile = "data\\" + fileName;
 
         // List to store our data
         List<Discount> storeDiscounts = new ArrayList<>();

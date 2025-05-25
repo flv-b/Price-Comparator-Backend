@@ -1,12 +1,14 @@
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Scanner;
+
+import features.DoOnDiscounts;
+import features.DoOnShoppingBasket;
 
 public class Main {
     public static void main(String[] args) {
 
-        Path folderPath = Paths.get("dataSamples");
+        Path folderPath = Paths.get("data");
         boolean running = true;
         Scanner scanner = new Scanner(System.in);
 
