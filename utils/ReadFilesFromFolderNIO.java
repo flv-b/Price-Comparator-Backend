@@ -1,3 +1,4 @@
+package utils;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.ArrayList;
@@ -50,17 +51,19 @@ public class ReadFilesFromFolderNIO {
         return storeDiscounts;
     }
 
-    public static List<Product> readProductsFromFolder(Path folderPath, String storeName) {
+    public static List<Product> readProductsFromFolder(Path folderPath) {
         List<Product> storeProducts = new ArrayList<>();
 
         List<String> validFiles = getValidFilesFromFolder(folderPath);
 
         validFiles.forEach(path -> {
-                        if (!path.contains("discounts")) {
-                            List<Product> products = CSVReader.GetProductsFromFile(path);
-                            storeProducts.addAll(products);
-                        }
-                    });
+            if (!(path.contains("discounts"))) {
+                System.out.println(path);
+                List<Product> products = CSVReader.GetProductsFromFile(path);
+                storeProducts.addAll(products);
+            }
+        });
 
         return storeProducts;
-}}
+    }
+}
