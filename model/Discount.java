@@ -1,4 +1,4 @@
-package store;
+package model;
 
 public class Discount {
     String product_id;

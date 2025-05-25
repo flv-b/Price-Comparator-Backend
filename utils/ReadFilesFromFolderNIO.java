@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import store.Discount;
-import store.Product;
+import model.Discount;
+import model.Product;
 
 public class ReadFilesFromFolderNIO {
 

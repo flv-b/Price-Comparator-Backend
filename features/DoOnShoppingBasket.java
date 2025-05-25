@@ -1,6 +1,5 @@
 package features;
 
-import store.Product;
 import utils.CSVReader;
 import utils.ReadFilesFromFolderNIO;
 
@@ -9,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import model.Product;
 
 public class DoOnShoppingBasket {
 
